@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --parchment: #FFFEF9;
+    --parchment-dark: #F5F4EE;
+    --guild-wood: #8B4513;
+    --guild-wood-dark: #654321;
+    --wax-red: #DC143C;
+    --wax-red-dark: #B71C1C;
+    --brand-purple: #8B5CF6;
+    --brand-purple-dark: #7C3AED;
+    --medieval-gold: #F59E0B;
+    --medieval-green: #10B981;
+    --medieval-blue: #3B82F6;
+  }
+
+  body {
+    @apply bg-parchment text-gray-900 font-serif;
+    background-image:
+      linear-gradient(to bottom, rgba(255, 254, 249, 0.95), rgba(255, 254, 249, 0.95)),
+      url('data:image/svg+xml,%3Csvg width="100" height="100" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /%3E%3C/filter%3E%3Crect width="100" height="100" filter="url(%23noise)" opacity="0.03" /%3E%3C/svg%3E');
+  }
+
+  * {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  /* Parchment texture utility */
+  .parchment-texture {
+    background-image:
+      linear-gradient(to bottom, rgba(255, 254, 249, 0.98), rgba(245, 244, 238, 0.98)),
+      url('data:image/svg+xml,%3Csvg width="100" height="100" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /%3E%3C/filter%3E%3Crect width="100" height="100" filter="url(%23noise)" opacity="0.05" /%3E%3C/svg%3E');
+  }
+
+  /* Wood texture utility */
+  .wood-texture {
+    background-image:
+      linear-gradient(90deg, rgba(139, 69, 19, 0.9), rgba(101, 67, 33, 0.9)),
+      repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 0, 0, 0.1) 2px, rgba(0, 0, 0, 0.1) 4px);
+  }
+
+  /* Button base styles */
+  .btn {
+    @apply px-4 py-2 rounded font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-br from-brand-purple to-brand-purple-dark text-white shadow-md;
+    @apply hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+    @apply focus:ring-brand-purple disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-parchment {
+    @apply btn bg-parchment border-2 border-guild-wood text-guild-wood shadow-candlelight;
+    @apply hover:bg-parchment-dark hover:shadow-candlelight-lg hover:-translate-y-0.5;
+    @apply focus:ring-guild-wood;
+  }
+
+  .btn-wax-seal {
+    @apply rounded-full w-12 h-12 flex items-center justify-center;
+    @apply bg-gradient-to-br from-wax-red to-wax-red-dark text-white shadow-md;
+    @apply hover:shadow-glow-purple hover:scale-105;
+    @apply focus:ring-2 focus:ring-wax-red focus:ring-offset-2;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-parchment rounded-lg shadow-candlelight border border-guild-wood/20 parchment-texture;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-300;
+    @apply hover:shadow-candlelight-lg hover:-translate-y-1;
+  }
+
+  /* Input styles */
+  .input {
+    @apply w-full px-4 py-2 bg-parchment border-2 border-guild-wood/30 rounded;
+    @apply focus:outline-none focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/20;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Modal backdrop */
+  .modal-backdrop {
+    @apply fixed inset-0 bg-black/50 flex items-center justify-center z-50;
+    animation: fadeIn 200ms ease-out;
+  }
+
+  /* Ceremonial border decoration */
+  .ceremonial-border {
+    @apply relative;
+    background-image:
+      linear-gradient(to right, var(--medieval-gold) 2px, transparent 2px),
+      linear-gradient(to bottom, var(--medieval-gold) 2px, transparent 2px);
+    background-size: 12px 12px;
+    background-position: 0 0, 0 0;
+    background-repeat: repeat-x, repeat-y;
+  }
+
+  /* Wax seal effect */
+  .wax-seal {
+    @apply relative rounded-full bg-gradient-to-br from-wax-red to-wax-red-dark;
+    box-shadow:
+      inset -2px -2px 4px rgba(0, 0, 0, 0.3),
+      inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+      0 4px 8px rgba(220, 20, 60, 0.4);
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    @apply relative h-2 bg-parchment-dark rounded-full overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full bg-gradient-to-r from-brand-purple to-medieval-blue rounded-full transition-all duration-500;
+  }
+
+  /* Badge shimmer effect */
+  .badge-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.5) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+
+  /* Skip link for accessibility */
+  .skip-link {
+    @apply absolute left-0 top-0 bg-brand-purple text-white px-4 py-2 rounded-br;
+    @apply -translate-y-full focus:translate-y-0 z-50;
+  }
+}
+
+@layer utilities {
+  /* Focus visible styles */
+  .focus-visible-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medieval-blue focus-visible:ring-offset-2;
+  }
+
+  /* Scroll container */
+  .scroll-container {
+    scrollbar-width: thin;
+    scrollbar-color: var(--guild-wood) var(--parchment-dark);
+  }
+
+  .scroll-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scroll-container::-webkit-scrollbar-track {
+    background: var(--parchment-dark);
+    border-radius: 4px;
+  }
+
+  .scroll-container::-webkit-scrollbar-thumb {
+    background: var(--guild-wood);
+    border-radius: 4px;
+  }
+
+  .scroll-container::-webkit-scrollbar-thumb:hover {
+    background: var(--guild-wood-dark);
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 300ms ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 300ms ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 200ms ease-out;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .mobile-bottom-nav {
+    @apply fixed bottom-0 left-0 right-0 bg-parchment border-t-2 border-guild-wood/20 z-40;
+    box-shadow: 0 -4px 12px rgba(139, 69, 19, 0.1);
+  }
+}
