@@ -7,6 +7,7 @@ import { Profile } from '@pages/ArtisanQuarters/Profile';
 import { Guilds } from '@pages/ChapterHouses/Guilds';
 import { GuildHall } from '@pages/ChapterHouses/GuildHall';
 import { Workshop } from '@pages/Workshop/Workshop';
+import { HeraldsChamber } from '@pages/HeraldsChamber/HeraldsChamber';
 import { PlaceholderPage } from '@pages/PlaceholderPage';
 
 function App() {
@@ -66,16 +67,7 @@ function App() {
           <Route path="/guilds" element={<Guilds />} />
           <Route path="/guilds/:guildId" element={<GuildHall />} />
 
-          <Route
-            path="/messages"
-            element={
-              <PlaceholderPage
-                title="Herald's Chamber"
-                description="Messages and notifications"
-                breadcrumbs={[{ label: "Herald's Chamber", path: '/messages' }]}
-              />
-            }
-          />
+          <Route path="/messages" element={<HeraldsChamber />} />
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
