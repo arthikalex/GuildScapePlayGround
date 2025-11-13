@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-parchment text-burnt-umber font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl font-bold tracking-wide;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-semibold;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+}
+
+@layer components {
+  /* Button Styles */
+  .btn-primary {
+    @apply px-6 py-3 bg-gold text-burnt-umber font-display font-semibold rounded-lg
+           border-2 border-burnt-umber transition-all duration-300
+           hover:bg-gold-light hover:shadow-elevated hover:-translate-y-0.5
+           active:translate-y-0 active:shadow-none
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-parchment text-burnt-umber font-display font-semibold rounded-lg
+           border-2 border-burnt-umber transition-all duration-300
+           hover:bg-parchment-dark hover:shadow-elevated hover:-translate-y-0.5
+           active:translate-y-0 active:shadow-none
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+  }
+
+  .btn-tertiary {
+    @apply px-6 py-3 bg-transparent text-burnt-umber font-display font-semibold rounded-lg
+           border-2 border-burnt-umber transition-all duration-300
+           hover:bg-burnt-umber hover:text-parchment hover:shadow-elevated hover:-translate-y-0.5
+           active:translate-y-0 active:shadow-none
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+  }
+
+  /* Card Styles */
+  .card-medieval {
+    @apply bg-gradient-to-br from-parchment-light to-parchment rounded-xl
+           border-4 border-burnt-umber p-6 shadow-elevated
+           transition-all duration-300;
+  }
+
+  .card-medieval:hover {
+    @apply -translate-y-1 shadow-chamber;
+  }
+
+  .card-chamber {
+    @apply bg-gradient-to-br from-chamber-stone to-chamber-dark rounded-xl
+           border-2 border-gold/30 p-6 shadow-chamber
+           transition-all duration-300;
+  }
+
+  /* Typography Decorations */
+  .initial-capital {
+    @apply text-6xl md:text-7xl font-decorative font-bold text-gold
+           float-left mr-3 mt-1 leading-none drop-shadow-lg;
+  }
+
+  .ornamental-divider {
+    @apply flex items-center justify-center gap-4 my-8;
+  }
+
+  .ornamental-divider::before,
+  .ornamental-divider::after {
+    @apply h-0.5 flex-1 bg-gradient-to-r from-transparent via-burnt-umber to-transparent;
+    content: '';
+  }
+
+  /* Wax Seal */
+  .wax-seal {
+    @apply w-20 h-20 cursor-pointer transition-all duration-300
+           hover:-translate-y-2 hover:scale-110 hover:drop-shadow-xl;
+  }
+
+  /* Badge Glow Effects */
+  .badge-common {
+    @apply transition-all duration-300;
+  }
+
+  .badge-uncommon {
+    @apply transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)];
+  }
+
+  .badge-rare {
+    @apply transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(59,130,246,0.6)];
+  }
+
+  .badge-epic {
+    @apply transition-all duration-300 hover:drop-shadow-[0_0_16px_rgba(168,85,247,0.7)];
+  }
+
+  .badge-legendary {
+    @apply transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(234,179,8,0.8)] animate-glow-pulse;
+  }
+
+  /* Input Styles */
+  .input-medieval {
+    @apply w-full px-4 py-3 bg-parchment-light border-2 border-burnt-umber rounded-lg
+           font-body text-burnt-umber placeholder:text-burnt-umber/50
+           focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold
+           transition-all duration-300;
+  }
+
+  .textarea-medieval {
+    @apply w-full px-4 py-3 bg-parchment-light border-2 border-burnt-umber rounded-lg
+           font-body text-burnt-umber placeholder:text-burnt-umber/50
+           focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold
+           transition-all duration-300 resize-none;
+  }
+
+  /* Scrollbar Styling */
+  .scrollbar-medieval::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .scrollbar-medieval::-webkit-scrollbar-track {
+    @apply bg-parchment-dark rounded;
+  }
+
+  .scrollbar-medieval::-webkit-scrollbar-thumb {
+    @apply bg-burnt-umber rounded hover:bg-burnt-umber-dark;
+  }
+}
+
+/* Custom Animations */
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
