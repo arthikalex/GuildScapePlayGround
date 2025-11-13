@@ -4,6 +4,8 @@ import { MainLayout } from '@components/layout/MainLayout';
 import { Dashboard } from '@pages/GreatHall/Dashboard';
 import { Proposals } from '@pages/CouncilChambers/Proposals';
 import { Profile } from '@pages/ArtisanQuarters/Profile';
+import { Guilds } from '@pages/ChapterHouses/Guilds';
+import { GuildHall } from '@pages/ChapterHouses/GuildHall';
 import { PlaceholderPage } from '@pages/PlaceholderPage';
 
 function App() {
@@ -69,16 +71,8 @@ function App() {
 
           <Route path="/profile" element={<Profile />} />
 
-          <Route
-            path="/guilds"
-            element={
-              <PlaceholderPage
-                title="Chapter Houses"
-                description="Guild communities"
-                breadcrumbs={[{ label: 'Chapter Houses', path: '/guilds' }]}
-              />
-            }
-          />
+          <Route path="/guilds" element={<Guilds />} />
+          <Route path="/guilds/:guildId" element={<GuildHall />} />
 
           <Route
             path="/messages"

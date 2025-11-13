@@ -1,21 +1,24 @@
-export type GuildRole = 'member' | 'contributor' | 'coordinator' | 'founder';
+export type GuildRole = 'founder' | 'elder' | 'artisan' | 'apprentice';
 
 export interface GuildMember {
   userId: string;
   name: string;
   avatar: string;
-  tier: string;
+  tier?: string;
   role: GuildRole;
-  specialty: string;
-  joinedDate: Date;
-  contributions: number;
+  specialties?: string[];
+  joinedAt: Date;
+  contributionCount: number;
+  reputation: number;
+  activityScore: number;
+  isOnline?: boolean;
 }
 
 export interface GuildProject {
   id: string;
   title: string;
   description: string;
-  status: 'planning' | 'active' | 'completed' | 'archived';
+  status: 'planning' | 'active' | 'review' | 'completed';
   contributors: {
     userId: string;
     name: string;
@@ -24,12 +27,17 @@ export interface GuildProject {
   }[];
   progress: number; // 0-100
   startDate: Date;
-  deadline?: Date;
+  deadline: Date;
   deliverables: {
     id: string;
     title: string;
     completed: boolean;
   }[];
+  rewards: {
+    reputation: number;
+    gld?: number;
+    badges?: string[];
+  };
 }
 
 export interface NoticeBoardPost {
@@ -58,23 +66,22 @@ export interface NoticeBoardPost {
 }
 
 export interface GuildTreasury {
-  gldBalance: number;
-  resources: {
-    type: string;
+  balance: number;
+  income: {
+    source: string;
     amount: number;
-    value: number;
   }[];
-  recentTransactions: {
+  expenses: {
+    category: string;
+    amount: number;
+  }[];
+  transactions: {
     id: string;
     type: 'income' | 'expense';
     amount: number;
     description: string;
-    timestamp: Date;
-  }[];
-  allocations: {
-    category: string;
-    allocated: number;
-    spent: number;
+    date: Date;
+    fromTo?: string;
   }[];
 }
 
@@ -83,17 +90,14 @@ export interface Guild {
   name: string;
   tagline: string;
   crest: string;
-  banner?: string;
-  memberCount: number;
-  activeProjects: number;
-  tags: string[];
-  treasury: GuildTreasury;
-  founded: Date;
+  banner: string;
   description: string;
+  tags: string[];
   members: GuildMember[];
   projects: GuildProject[];
   noticeBoard: NoticeBoardPost[];
-  isPublic: boolean;
+  treasury: GuildTreasury;
+  foundedDate: Date;
   requirements?: {
     minTier?: string;
     minReputation?: number;
