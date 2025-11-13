@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { MainLayout } from '@components/layout/MainLayout';
 import { Dashboard } from '@pages/GreatHall/Dashboard';
+import { Proposals } from '@pages/CouncilChambers/Proposals';
 import { PlaceholderPage } from '@pages/PlaceholderPage';
 
 function App() {
@@ -63,16 +64,7 @@ function App() {
             }
           />
 
-          <Route
-            path="/council"
-            element={
-              <PlaceholderPage
-                title="Council Chambers"
-                description="Governance and voting"
-                breadcrumbs={[{ label: 'Council Chambers', path: '/council' }]}
-              />
-            }
-          />
+          <Route path="/council" element={<Proposals />} />
 
           <Route
             path="/profile"
