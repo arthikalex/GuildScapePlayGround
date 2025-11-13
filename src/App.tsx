@@ -6,6 +6,7 @@ import { Proposals } from '@pages/CouncilChambers/Proposals';
 import { Profile } from '@pages/ArtisanQuarters/Profile';
 import { Guilds } from '@pages/ChapterHouses/Guilds';
 import { GuildHall } from '@pages/ChapterHouses/GuildHall';
+import { Workshop } from '@pages/Workshop/Workshop';
 import { PlaceholderPage } from '@pages/PlaceholderPage';
 
 function App() {
@@ -34,16 +35,7 @@ function App() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Dashboard />} />
 
-          <Route
-            path="/workshop"
-            element={
-              <PlaceholderPage
-                title="Workshop"
-                description="Create and review artworks"
-                breadcrumbs={[{ label: 'Workshop', path: '/workshop' }]}
-              />
-            }
-          />
+          <Route path="/workshop" element={<Workshop />} />
 
           <Route
             path="/library"
