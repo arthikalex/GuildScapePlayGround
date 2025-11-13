@@ -8,6 +8,7 @@ import { Guilds } from '@pages/ChapterHouses/Guilds';
 import { GuildHall } from '@pages/ChapterHouses/GuildHall';
 import { Workshop } from '@pages/Workshop/Workshop';
 import { HeraldsChamber } from '@pages/HeraldsChamber/HeraldsChamber';
+import { Library } from '@pages/Library/Library';
 import { PlaceholderPage } from '@pages/PlaceholderPage';
 
 function App() {
@@ -38,16 +39,7 @@ function App() {
 
           <Route path="/workshop" element={<Workshop />} />
 
-          <Route
-            path="/library"
-            element={
-              <PlaceholderPage
-                title="Library"
-                description="Learn and grow your skills"
-                breadcrumbs={[{ label: 'Library', path: '/library' }]}
-              />
-            }
-          />
+          <Route path="/library" element={<Library />} />
 
           <Route
             path="/bazaar"
