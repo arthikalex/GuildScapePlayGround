@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { MainLayout } from '@components/layout/MainLayout';
 import { EnhancedDashboard } from '@pages/GreatHall/EnhancedDashboard';
@@ -10,10 +10,13 @@ import { Workshop } from '@pages/Workshop/Workshop';
 import { HeraldsChamber } from '@pages/HeraldsChamber/HeraldsChamber';
 import { Library } from '@pages/Library/Library';
 import { Bazaar } from '@pages/Bazaar/Bazaar';
+import { NotFound } from '@pages/NotFound';
+import { ErrorBoundary } from '@components/common/ErrorBoundary';
 
 function App() {
   return (
-    <BrowserRouter>
+    <ErrorBoundary>
+      <BrowserRouter>
       <Toaster
         position="top-right"
         toastOptions={{
@@ -52,10 +55,12 @@ function App() {
 
           <Route path="/messages" element={<HeraldsChamber />} />
 
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/404" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
+    </ErrorBoundary>
   );
 }
 

@@ -1,128 +1,162 @@
-# GuildScape Frontend
+# 🏰 GuildScape
 
-A medieval-themed DAO platform for physical artists, transforming blockchain complexity into delightful guild hall ceremonies.
+**A Medieval-Themed DAO Platform for Artists**
 
-## 🏰 Overview
+GuildScape is a comprehensive web application that combines the collaborative spirit of medieval guilds with modern DAO governance, creating a vibrant community where artists create, collaborate, and prosper together.
 
-GuildScape is a blockchain-based DAO platform that uses medieval guild metaphors to make Web3 governance intuitive and engaging. Every interaction is transformed into a meaningful ceremony—from wax seal voting to devotion chain streaks.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue)
+![React](https://img.shields.io/badge/React-18.3-blue)
+![Vite](https://img.shields.io/badge/Vite-5.4-purple)
 
-## 🎨 Design Philosophy
+---
 
-- **Medieval Metaphors**: Guild halls, chambers, workshops instead of technical jargon
-- **Tactile Animations**: Wax seals, scrolls unfurling, coins clinking
-- **Celebration-Driven**: Duolingo-style rewards and immediate feedback
-- **Professional Polish**: Built for 20-30 year artistic careers
+## 📜 Table of Contents
 
-## 🚀 Quick Start
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Getting Started](#-getting-started)
+- [Project Structure](#-project-structure)
+- [Development](#-development)
+- [Building for Production](#-building-for-production)
+- [Design System](#-design-system)
 
-```bash
-# Install dependencies
-npm install
+---
 
-# Start development server
-npm run dev
+## ✨ Features
 
-# Build for production
-npm run build
+### 🏛️ **The Great Hall (Dashboard)**
+- Enhanced Dashboard with activity feed, trending artworks, and leaderboards
+- Devotion Chain tracking with streak visualization
+- Quick Actions for rapid navigation
+- Comprehensive user statistics
 
-# Preview production build
-npm run preview
-```
+### 🎨 **The Workshop**
+- Artwork upload system with peer review
+- 3-dimensional scoring system
+- Quality rating calculation
+- Review queue and submission tracking
+
+### 📚 **The Library (Gamification)**
+- Quest system with 5 rarity tiers
+- Milestone tracking across 4 categories
+- Mastery trees with skill progression
+- Reward system (Badges, GLD, Avatar Items)
+
+### 🏪 **The Bazaar (Marketplace)**
+- Advanced marketplace with filtering
+- Shopping cart with persistent state
+- Offer system for price negotiation
+- Transaction history tracking
+
+### 🏛️ **Council Chambers (Governance)**
+- Proposal system with voting
+- Vote tracking and quorum requirements
+- Proposal status management
+
+### 👥 **Chapter Houses (Guilds)**
+- Guild discovery and creation
+- Member management
+- Guild activities tracking
+
+### 💬 **Herald's Chamber (Messaging)**
+- Direct messaging between artisans
+- Notification center
+- Real-time updates
+
+---
+
+## 🛠️ Tech Stack
+
+- **React 18.3** - UI library
+- **TypeScript 5.6** - Type safety
+- **Vite 5.4** - Build tool
+- **Zustand 5.0** - State management
+- **Tailwind CSS 3.4** - Styling
+- **Framer Motion 11.14** - Animations
+- **React Router 6.28** - Routing
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ and npm 9+
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone <repository-url>
+   cd GuildScapePlayGround
+   ```
+
+2. Install dependencies
+   ```bash
+   npm install
+   ```
+
+3. Start development server
+   ```bash
+   npm run dev
+   ```
+
+4. Open http://localhost:5173
+
+---
 
 ## 📁 Project Structure
 
 ```
-guildscape-frontend/
-├── src/
-│   ├── components/       # Reusable UI components
-│   │   ├── common/       # Button, Card, Modal, etc.
-│   │   ├── navigation/   # Sidebar, Breadcrumbs
-│   │   └── layout/       # Page layouts
-│   ├── pages/            # Route pages organized by "room"
-│   ├── store/            # Zustand state management
-│   ├── types/            # TypeScript definitions
-│   ├── utils/            # Helper functions and mock data
-│   └── styles/           # Global CSS and Tailwind
-└── public/               # Static assets
+src/
+├── components/       # Reusable UI components
+├── pages/           # Page components
+├── store/           # Zustand stores
+├── types/           # TypeScript definitions
+├── utils/           # Utility functions
+├── App.tsx          # Main app
+└── main.tsx         # Entry point
 ```
-
-## 🎭 Key Features
-
-### Phase 1 (Current - Foundation)
-- ✅ Project structure with Vite + React + TypeScript
-- ✅ Medieval design system with Tailwind
-- ✅ Custom fonts (Cinzel, Crimson Text)
-- ✅ Room-based navigation with Sidebar
-- ✅ Type-safe stores with Zustand
-- ✅ Common components (Button, Card, Modal, Input, Tooltip)
-- ✅ Page transitions with Framer Motion
-- ✅ Great Hall dashboard with Devotion Chain
-
-### Phase 2-10 (Upcoming)
-- Council Chambers with wax seal voting
-- Artisan's Quarters profile showcase
-- Chapter Houses guild communities
-- Workshop peer review system
-- Complete gamification (quests, skill trees, badges)
-- Herald's Chamber messaging
-- And more...
-
-## 🛠️ Tech Stack
-
-- **Framework**: React 18 with TypeScript
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS with custom design tokens
-- **State**: Zustand with persistence
-- **Routing**: React Router v6
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **Notifications**: React Hot Toast
-
-## 🎨 Design Tokens
-
-### Colors
-- **Parchment**: #F5ECD7 (main background)
-- **Burnt Umber**: #8B4513 (primary text)
-- **Gold**: #D4AF37 (accents and highlights)
-- **Chamber**: Dark tones for navigation
-- **Council**: Blues, reds, purples for voting
-- **Vote**: Green (approve), Red (reject), Gray (abstain)
-
-### Typography
-- **Display**: Cinzel (headings)
-- **Decorative**: Cinzel Decorative (special elements)
-- **Body**: Crimson Text (content)
-- **Sans**: Inter (UI elements)
-
-## 🎯 Development Guidelines
-
-1. **Medieval Theme**: Keep all UI metaphors consistent with guild halls
-2. **Animations**: Every interaction should feel delightful (60 FPS)
-3. **Accessibility**: Keyboard navigation, ARIA labels, reduced motion support
-4. **Performance**: Code splitting, lazy loading, optimized images
-5. **Mobile First**: Responsive design for all screen sizes
-
-## 📝 Mock Data
-
-The application currently uses comprehensive mock data (see `src/utils/mockData.ts`) for:
-- User profiles and reputation
-- Proposals and voting
-- Artworks and peer reviews
-- Guilds and communities
-- Quests and achievements
-
-## 🤝 Contributing
-
-1. Follow the existing code structure and naming conventions
-2. Use TypeScript strictly (no `any` types)
-3. Write clean, commented code
-4. Test on multiple browsers
-5. Ensure accessibility standards
-
-## 📄 License
-
-Copyright © 2025 GuildScape. All rights reserved.
 
 ---
 
-Built with ❤️ for artists who deserve better tools.
+## 🔧 Development
+
+### Available Scripts
+
+```bash
+npm run dev      # Start dev server
+npm run build    # Build for production
+npm run preview  # Preview production build
+npm run lint     # Lint code
+```
+
+---
+
+## 🏗️ Building for Production
+
+```bash
+npm run build
+```
+
+Build outputs to `dist/`:
+- JS: ~785 KB (225 KB gzipped)
+- CSS: ~66 KB (10 KB gzipped)
+
+---
+
+## 🎨 Design System
+
+### Colors
+- `parchment`: #F5ECD7 (Background)
+- `burnt-umber`: #8B4513 (Primary)
+- `gold`: #D4AF37 (Accent)
+
+### Typography
+- **Display**: Cinzel
+- **Body**: Crimson Text
+- **UI**: Inter
+
+---
+
+**Built with ⚔️ by artisans, for artisans**
