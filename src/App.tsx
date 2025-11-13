@@ -9,7 +9,7 @@ import { GuildHall } from '@pages/ChapterHouses/GuildHall';
 import { Workshop } from '@pages/Workshop/Workshop';
 import { HeraldsChamber } from '@pages/HeraldsChamber/HeraldsChamber';
 import { Library } from '@pages/Library/Library';
-import { PlaceholderPage } from '@pages/PlaceholderPage';
+import { Bazaar } from '@pages/Bazaar/Bazaar';
 
 function App() {
   return (
@@ -41,16 +41,7 @@ function App() {
 
           <Route path="/library" element={<Library />} />
 
-          <Route
-            path="/bazaar"
-            element={
-              <PlaceholderPage
-                title="Bazaar"
-                description="Marketplace for art"
-                breadcrumbs={[{ label: 'Bazaar', path: '/bazaar' }]}
-              />
-            }
-          />
+          <Route path="/bazaar" element={<Bazaar />} />
 
           <Route path="/council" element={<Proposals />} />
 
