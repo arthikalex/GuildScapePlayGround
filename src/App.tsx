@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { MainLayout } from '@components/layout/MainLayout';
-import { Dashboard } from '@pages/GreatHall/Dashboard';
+import { EnhancedDashboard } from '@pages/GreatHall/EnhancedDashboard';
 import { Proposals } from '@pages/CouncilChambers/Proposals';
 import { Profile } from '@pages/ArtisanQuarters/Profile';
 import { Guilds } from '@pages/ChapterHouses/Guilds';
@@ -35,7 +35,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<Dashboard />} />
+          <Route index element={<EnhancedDashboard />} />
 
           <Route path="/workshop" element={<Workshop />} />
 
