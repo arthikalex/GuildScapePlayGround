@@ -3,6 +3,7 @@ import { Toaster } from 'react-hot-toast';
 import { MainLayout } from '@components/layout/MainLayout';
 import { Dashboard } from '@pages/GreatHall/Dashboard';
 import { Proposals } from '@pages/CouncilChambers/Proposals';
+import { Profile } from '@pages/ArtisanQuarters/Profile';
 import { PlaceholderPage } from '@pages/PlaceholderPage';
 
 function App() {
@@ -66,16 +67,7 @@ function App() {
 
           <Route path="/council" element={<Proposals />} />
 
-          <Route
-            path="/profile"
-            element={
-              <PlaceholderPage
-                title="Artisan's Quarters"
-                description="Your profile and achievements"
-                breadcrumbs={[{ label: "Artisan's Quarters", path: '/profile' }]}
-              />
-            }
-          />
+          <Route path="/profile" element={<Profile />} />
 
           <Route
             path="/guilds"
