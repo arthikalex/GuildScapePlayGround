@@ -149,7 +149,7 @@ export const useUserStore = create<UserState>()(
       clearUser: () => set({ currentUser: null, dailyScrolls: [], activityFeed: [] }),
     }),
     {
-      name: 'guildscape-user-storage',
+      name: 'guildscape-user-storage-v2',
       partialize: (state) => ({
         currentUser: state.currentUser,
         dailyScrolls: state.dailyScrolls,

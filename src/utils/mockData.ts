@@ -7,10 +7,10 @@ import type { Quest } from '@/types/gamification';
 // Mock User Data
 export const mockUser: User = {
   id: 'user-001',
-  name: 'Emma Rodriguez',
+  name: 'Arthik Alexander',
   tier: 'Artisan',
   title: 'Master Ceramicist',
-  avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Emma',
+  avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Arthik',
   joinDate: new Date('2023-01-15'),
   reputation: {
     total: 845,
@@ -84,10 +84,10 @@ export const mockUser: User = {
   votingPower: 850,
   bio: 'Ceramic artist specializing in functional stoneware. Passionate about sustainable practices and community education.',
   location: 'Portland, Oregon',
-  website: 'https://emmaceramics.com',
+  website: 'https://arthikalexander.com',
   socialLinks: {
-    instagram: '@emmaceramics',
-    portfolio: 'emmaceramics.com',
+    instagram: '@arthikalexander',
+    portfolio: 'arthikalexander.com',
   },
 };
 
@@ -304,8 +304,8 @@ export const mockArtworks: Artwork[] = [
   {
     id: 'artwork-001',
     artistId: 'user-001',
-    artistName: 'Emma Rodriguez',
-    artistAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Emma',
+    artistName: 'Arthik Alexander',
+    artistAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Arthik',
     title: 'Ocean Vessel Series #3',
     medium: 'Ceramic',
     dimensions: '18" × 12" × 8"',
@@ -357,8 +357,8 @@ export const mockArtworks: Artwork[] = [
   {
     id: 'artwork-002',
     artistId: 'user-001',
-    artistName: 'Emma Rodriguez',
-    artistAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Emma',
+    artistName: 'Arthik Alexander',
+    artistAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Arthik',
     title: 'Meditation Bowl',
     medium: 'Ceramic',
     dimensions: '6" × 6" × 3"',
@@ -405,8 +405,8 @@ export const mockGuilds: Guild[] = [
     members: [
       {
         userId: 'user-001',
-        name: 'Emma Rodriguez',
-        avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Emma',
+        name: 'Arthik Alexander',
+        avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Arthik',
         role: 'founder',
         joinedAt: new Date('2023-01-20'),
         contributionCount: 45,
@@ -464,8 +464,8 @@ export const mockGuilds: Guild[] = [
         contributors: [
           {
             userId: 'user-001',
-            name: 'Emma Rodriguez',
-            avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Emma',
+            name: 'Arthik Alexander',
+            avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Arthik',
             role: 'Lead',
           },
           {
@@ -516,8 +516,8 @@ export const mockGuilds: Guild[] = [
       {
         id: 'post-001',
         authorId: 'user-001',
-        authorName: 'Emma Rodriguez',
-        authorAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Emma',
+        authorName: 'Arthik Alexander',
+        authorAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Arthik',
         type: 'event',
         title: 'Winter Firing Session - December 5th',
         content:

@@ -178,7 +178,7 @@ export const useBazaarStore = create<BazaarState>()(
       },
     }),
     {
-      name: 'bazaar-storage',
+      name: 'bazaar-storage-v2',
     }
   )
 );

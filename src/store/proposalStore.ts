@@ -88,7 +88,7 @@ export const useProposalStore = create<ProposalState>()(
       },
     }),
     {
-      name: 'guildscape-proposal-storage',
+      name: 'guildscape-proposal-storage-v2',
       partialize: (state) => ({
         proposals: state.proposals,
         voteHistory: state.voteHistory,
